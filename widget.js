@@ -57,6 +57,17 @@
             return;
         }
 
+        // Add CSS link if not already present
+        if (!document.querySelector('link[href*="widget.css"]')) {
+            const link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = 'widget.css';
+            document.head.appendChild(link);
+        }
+
+        // Add widget class to container
+        container.classList.add('par-counter-widget');
+
         // Dynamically add widget structure
         const widgetHtml = `
             <div class="par-counter-title">
@@ -106,191 +117,6 @@
         `;
 
         container.innerHTML = widgetHtml;
-
-        // Apply styles directly by injecting a <style> tag
-        const styleTag = document.createElement('style');
-        styleTag.innerHTML = `
-            #${containerElementId} {
-                font-family: Arial, sans-serif;
-                padding: 20px;
-                border: 1px solid #eee;
-                border-radius: 8px;
-                max-width: 700px; /* Adjust as needed */
-                margin: 0 auto;
-                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-                background-color: #fff;
-                color: #333;
-                box-sizing: border-box; /* Important for consistent sizing */
-                line-height: 1.5;
-            }
-
-            #${containerElementId} .par-counter-title {
-                font-size: 15px;
-                text-align: center;
-                line-height: 1.3em;
-                color: #ED5A5C;
-                letter-spacing: 0.05em;
-                margin-bottom: 20px;
-                font-weight: bold;
-            }
-
-            /* Grid container for headers and data rows */
-            #${containerElementId} .par-counter-grid-container {
-                display: grid;
-                grid-template-columns: 1fr repeat(2, 1fr); /* Label column + 2 data columns */
-                gap: 10px 15px; /* Row gap, Column gap */
-                margin-bottom: 20px;
-            }
-
-            /* Header Row */
-            #${containerElementId} .par-counter-header-row {
-                grid-column: 1 / -1; /* Spans all columns */
-                display: contents; /* Allows children to participate in the main grid */
-            }
-
-            #${containerElementId} .par-counter-empty-cell {
-                /* For alignment with the label cells in data rows */
-                grid-column: 1;
-            }
-
-            #${containerElementId} .par-counter-header-item {
-                background-color: #0A1E2C;
-                border-radius: 15px;
-                padding: 15px 20px;
-                text-align: center;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                color: #fff;
-            }
-
-            /* Data Rows (Costs and Deaths) */
-            #${containerElementId} .par-counter-data-row {
-                display: contents; /* Allows children to participate in the main grid */
-            }
-
-            #${containerElementId} .par-counter-label-cell {
-                background-color: #0A1E2C;
-                color: #fff;
-                border: 1px solid #eee;
-                border-radius: 15px; /* Apply to cells */
-                padding: 10px 15px;
-                font-size: 14px;
-                font-weight: bold;
-                letter-spacing: 0.05em;
-                text-align: center;
-                display: flex;
-                align-items: center;
-                min-height: 50px; /* Ensure consistent height for rows */
-            }
-
-            #${containerElementId} .par-counter-value-cell {
-                background-color: #fff;
-                color: #ED5A5C;
-                border: 1px solid #eee;
-                border-radius: 15px; /* Apply to cells */
-                padding: 10px 15px;
-                font-family: 'Poppins', sans-serif;
-                font-size: 28px;
-                font-weight: bold;
-                text-align: center;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                min-height: 50px; /* Ensure consistent height for rows */
-            }
-
-            /* Specific styling for Deaths row */
-            #${containerElementId} .par-counter-data-row:last-child .par-counter-value-cell {
-                font-size: 32px; /* Larger font for deaths */
-            }
-
-
-            #${containerElementId} .par-counter-label {
-                font-size: 16px;
-                letter-spacing: 0.15em;
-                color: #fff; /* Default for header items */
-                font-weight: bold;
-                margin-bottom: 5px;
-            }
-
-            #${containerElementId} .par-counter-description {
-                font-size: 11px;
-                color: #ED5A5C;
-                font-weight: bold;
-                margin-bottom: 0; /* Remove bottom margin */
-            }
-
-            /* Footer */
-            #${containerElementId} .par-counter-footer {
-                font-size: 15px;
-                line-height: 1.3em;
-                text-align: center;
-                color: #ED5A5C;
-                letter-spacing: 0.05em;
-                margin-top: 20px;
-            }
-
-            #${containerElementId} .par-counter-footer p {
-                font-size: 15px;
-                color: #0A1E2C;
-                font-family: 'Arial', sans-serif;
-                line-height: 1.6em;
-            }
-
-            #${containerElementId} .par-counter-footer a {
-                color: #ED5A5C;
-                text-decoration: underline;
-            }
-
-            #${containerElementId} .qr-code-section {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                margin-top: 20px;
-            }
-
-            #${containerElementId} .par-qr-code {
-                width: 76px;
-                height: 74px;
-                margin-bottom: 10px;
-            }
-
-            #${containerElementId} .qr-code-section p {
-                font-size: 12px;
-                color: #ED5A5C;
-                line-height: 1.2;
-            }
-
-            @media (max-width: 600px) { /* Adjusted breakpoint for better mobile layout */
-                #${containerElementId} .par-counter-grid-container {
-                    grid-template-columns: 1fr; /* Stack all items */
-                }
-                #${containerElementId} .par-counter-empty-cell {
-                    display: none; /* Hide empty cell on mobile */
-                }
-                #${containerElementId} .par-counter-header-item,
-                #${containerElementId} .par-counter-label-cell,
-                #${containerElementId} .par-counter-value-cell {
-                    grid-column: auto !important; /* Reset grid-column for stacking */
-                    width: 100%; /* Take full width */
-                    margin-bottom: 10px; /* Add some spacing between stacked items */
-                }
-                #${containerElementId} .par-counter-header-item {
-                    padding: 10px;
-                }
-                #${containerElementId} .par-counter-label-cell {
-                    text-align: center;
-                    margin-bottom: 5px;
-                }
-                #${containerElementId} .par-counter-value-cell {
-                    text-align: center;
-                }
-            }
-        `;
-        document.head.appendChild(styleTag);
-
 
         const counterElements = container.querySelectorAll('.par-counter-value-cell');
 
