@@ -56,10 +56,30 @@
             console.error('PAR Counter Widget: Container element not found with ID:', containerElementId);
             return;
         }
+        // --- Read Configuration from Data Attributes ---
+        const widgetWidth = container.getAttribute('data-widget-width') || '500px'; // Default if not provided
+        const widgetHeight = container.getAttribute('data-widget-height') || '100px';
+        const widgetBgColor = container.getAttribute('data-widget-background-color') || '#fff';
 
         // Apply styles directly by injecting a <style> tag
         const styleTag = document.createElement('style');
         styleTag.innerHTML = `
+
+#${containerElementId} {
+                font-family: Arial, sans-serif;
+                padding: 20px;
+                border: 1px solid #eee;
+                border-radius: 8px;
+                max-width: ${widgetWidth}; /* Use configured width */
+                height: ${widgetHeight};   /* Use configured height */
+                margin: 0 auto;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+                background-color: ${widgetBgColor}; /* Use configured background color */
+                box-sizing: border-box;
+                line-height: 1.5;
+                overflow: hidden; /* Prevent text overflow if height is fixed */
+            }
+
 .par-counter-widget {
     font-family: Arial, sans-serif;
     padding: 20px;
