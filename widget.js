@@ -64,7 +64,6 @@
         // Apply styles directly by injecting a <style> tag
         const styleTag = document.createElement('style');
         styleTag.innerHTML = `
-
 #${containerElementId} {
                 font-family: Arial, sans-serif;
                 padding: 20px;
@@ -80,22 +79,8 @@
                 overflow: hidden; /* Prevent text overflow if height is fixed */
             }
 
-.par-counter-widget {
-    font-family: Arial, sans-serif;
-    padding: 20px;
-    border: 1px solid #eee;
-    border-radius: 8px;
-    max-width: 700px;
-    margin: 0 auto;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    background-color: #fff;
-    color: #333;
-    box-sizing: border-box;
-    line-height: 1.5;
-}
-
 /* Scope all styles to the widget container */
-.par-counter-widget .par-counter-title {
+#${containerElementId} .par-counter-title {
     font-size: 15px;
     text-align: center;
     line-height: 1.3em;
@@ -105,23 +90,23 @@
     font-weight: bold;
 }
 
-.par-counter-widget .par-counter-grid-container {
+#${containerElementId} .par-counter-grid-container {
     display: grid;
     grid-template-columns: 1fr repeat(2, 1fr);
     gap: 10px 15px;
     margin-bottom: 20px;
 }
 
-.par-counter-widget .par-counter-header-row {
+#${containerElementId} .par-counter-header-row {
     grid-column: 1 / -1;
     display: contents;
 }
 
-.par-counter-widget .par-counter-empty-cell {
+#${containerElementId} .par-counter-empty-cell {
     grid-column: 1;
 }
 
-.par-counter-widget .par-counter-header-item {
+#${containerElementId} .par-counter-header-item {
     background-color: #0A1E2C;
     border-radius: 15px;
     padding: 15px 20px;
@@ -133,11 +118,11 @@
     color: #fff;
 }
 
-.par-counter-widget .par-counter-data-row {
+#${containerElementId} .par-counter-data-row {
     display: contents;
 }
 
-.par-counter-widget .par-counter-label-cell {
+#${containerElementId} .par-counter-label-cell {
     background-color: #0A1E2C;
     color: #fff;
     border: 1px solid #eee;
@@ -153,7 +138,7 @@
     min-height: 50px;
 }
 
-.par-counter-widget .par-counter-value-cell {
+#${containerElementId} .par-counter-value-cell {
     background-color: #fff;
     color: #ED5A5C;
     border: 1px solid #eee;
@@ -171,11 +156,11 @@
     font-variant-numeric: tabular-nums;
 }
 
-.par-counter-widget .par-counter-data-row:last-child .par-counter-value-cell {
+#${containerElementId} .par-counter-data-row:last-child .par-counter-value-cell {
     font-size: 32px;
 }
 
-.par-counter-widget .par-counter-label {
+#${containerElementId} .par-counter-label {
     font-size: 16px;
     letter-spacing: 0.15em;
     color: #fff;
@@ -183,14 +168,14 @@
     margin-bottom: 5px;
 }
 
-.par-counter-widget .par-counter-description {
+#${containerElementId} .par-counter-description {
     font-size: 11px;
     color: #ED5A5C;
     font-weight: bold;
     margin-bottom: 0;
 }
 
-.par-counter-widget .par-counter-footer {
+#${containerElementId} .par-counter-footer {
     font-size: 15px;
     line-height: 1.3em;
     text-align: center;
@@ -199,67 +184,65 @@
     margin-top: 20px;
 }
 
-.par-counter-widget .par-counter-footer p {
+#${containerElementId} .par-counter-footer p {
     font-size: 15px;
     color: #0A1E2C;
     font-family: 'Arial', sans-serif;
     line-height: 1.6em;
 }
 
-.par-counter-widget .par-counter-footer a {
+#${containerElementId} .par-counter-footer a {
     color: #ED5A5C;
     text-decoration: underline;
 }
 
-.par-counter-widget .qr-code-section {
+#${containerElementId} .qr-code-section {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 20px;
 }
 
-.par-counter-widget .par-qr-code {
+#${containerElementId} .par-qr-code {
     width: 76px;
     height: 74px;
     margin-bottom: 10px;
 }
 
-.par-counter-widget .qr-code-section p {
+#${containerElementId} .qr-code-section p {
     font-size: 12px;
     color: #ED5A5C;
     line-height: 1.2;
 }
 
 @media (max-width: 600px) {
-    .par-counter-widget .par-counter-grid-container {
+    #${containerElementId} .par-counter-grid-container {
         grid-template-columns: 1fr;
     }
-    .par-counter-widget .par-counter-empty-cell {
+    #${containerElementId} .par-counter-empty-cell {
         display: none;
     }
-    .par-counter-widget .par-counter-header-item,
-    .par-counter-widget .par-counter-label-cell,
-    .par-counter-widget .par-counter-value-cell {
+    #${containerElementId} .par-counter-header-item,
+    #${containerElementId} .par-counter-label-cell,
+    #${containerElementId} .par-counter-value-cell {
         grid-column: auto !important;
         width: 100%;
         margin-bottom: 10px;
     }
-    .par-counter-widget .par-counter-header-item {
+    #${containerElementId} .par-counter-header-item {
         padding: 10px;
     }
-    .par-counter-widget .par-counter-label-cell {
+    #${containerElementId} .par-counter-label-cell {
         text-align: center;
         margin-bottom: 5px;
     }
-    .par-counter-widget .par-counter-value-cell {
+    #${containerElementId} .par-counter-value-cell {
         text-align: center;
     }
 }
         `;
         document.head.appendChild(styleTag);
 
-        // Add widget class to container
-        container.classList.add('par-counter-widget');
 
         // Dynamically add widget structure
         const widgetHtml = `
