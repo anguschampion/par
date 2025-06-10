@@ -219,7 +219,7 @@
         text-align: right;
         min-height: unset;
         min-width: unset;
-        font-size: 20px;
+        font-size: 14px;
         justify-content: flex-end;
         grid-area: auto;
     }
