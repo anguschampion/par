@@ -179,7 +179,7 @@
                 font-size: 14px;
                 font-weight: bold;
                 letter-spacing: 0.05em;
-                text-align: left;
+                text-align: center;
                 display: flex;
                 align-items: center;
                 min-height: 50px; /* Ensure consistent height for rows */
