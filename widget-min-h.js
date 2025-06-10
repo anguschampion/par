@@ -94,8 +94,8 @@
 
 #${containerElementId} .par-counter-grid-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 5px 5px;
+    grid-template-columns: 1fr; /* Mobile-first default */
+    gap: 10px; /* Mobile-first default */
     margin-bottom: 10px;
 }
 
@@ -109,7 +109,7 @@
     color: #fff;
     border: 1px solid #eee;
     border-radius: 15px;
-    padding: 7px 10px;
+    padding: 10px; /* Mobile-first default */
     font-size: 14px;
     font-weight: bold;
     letter-spacing: 0.05em;
@@ -118,6 +118,9 @@
     justify-content: center;
     align-items: center;
     min-height: 20px;
+    grid-column: auto !important; /* Mobile-first default */
+    width: 100%; /* Mobile-first default */
+    margin-bottom: 10px; /* Mobile-first default */
 }
 
 #${containerElementId} .par-counter-data-row {
@@ -129,7 +132,7 @@
     color: #ED5A5C;
     border: 1px solid #eee;
     border-radius: 15px;
-    padding: 10px 15px;
+    padding: 10px 15px; /* Mobile-first default */
     font-family: 'Poppins', sans-serif;
     font-size: 14px;
     font-weight: bold;
@@ -138,8 +141,11 @@
     justify-content: center;
     align-items: center;
     min-height: 20px;
-    min-width:100px;
+    /* min-width:100px; removed for mobile-first */
     font-variant-numeric: tabular-nums;
+    grid-column: auto !important; /* Mobile-first default */
+    width: 100%; /* Mobile-first default */
+    margin-bottom: 10px; /* Mobile-first default */
 }
 
 #${containerElementId} .par-counter-label {
@@ -170,25 +176,22 @@
     color: #ED5A5C;
     text-decoration: underline;
 }
-    #${containerElementId} .par-counter-empty-cell {
-    grid-column: 1;
-}
 
-@media (max-width: 600px) {
+@media (min-width: 601px) {
     #${containerElementId} .par-counter-grid-container {
-        grid-template-columns: 1fr;
-    }
-    #${containerElementId} .par-counter-header-item,
-    #${containerElementId} .par-counter-value-cell {
-        grid-column: auto !important;
-        width: 100%;
-        margin-bottom: 10px;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 5px 5px;
     }
     #${containerElementId} .par-counter-header-item {
-        padding: 10px;
+        padding: 7px 10px;
+        width: auto; /* Override mobile 100% width */
+        margin-bottom: 0; /* Override mobile margin */
     }
     #${containerElementId} .par-counter-value-cell {
-        text-align: center;
+        padding: 10px 15px;
+        min-width: 100px; /* Re-introduce min-width for desktop */
+        width: auto; /* Override mobile 100% width */
+        margin-bottom: 0; /* Override mobile margin */
     }
 }
         `;
