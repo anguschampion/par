@@ -56,9 +56,9 @@
       return;
     }
     // --- Read Configuration from Data Attributes ---
-    const widgetWidth = container.getAttribute("data-widget-width") || "500px"; // Default if not provided
+    const widgetWidth = container.getAttribute("data-widget-width") || "auto"; // Default if not provided
     const widgetHeight =
-      container.getAttribute("data-widget-height") || "100px";
+      container.getAttribute("data-widget-height") || "auto";
     const widgetBgColor =
       container.getAttribute("data-widget-background-color") || "#fff";
 
