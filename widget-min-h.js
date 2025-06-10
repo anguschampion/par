@@ -123,6 +123,7 @@
           justify-content: center;
           align-items: center;
           min-height: 20px;
+          min-width: 180px;
         }
   
         #${containerElementId} .par-counter-value-cell {
