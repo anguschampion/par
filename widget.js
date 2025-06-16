@@ -104,8 +104,8 @@
 }
 
 #${containerElementId} .par-counter-value-cell {
-    background-color: #fff; color:rgb(0, 8, 4); border: 1px solid #eee; border-radius: 15px;
-    padding: 10px 15px; font-family: 'Roboto Mono', monospace; font-size: 28px; font-weight: bold;
+    background-color: #fff; color:ED5A5C; border: 1px solid #eee; border-radius: 15px;
+    padding: 10px 15px; font-family: 'Roboto Mono', monospace; font-size: 24px; font-weight: bold;
     text-align: center; display: flex; justify-content: center; align-items: center;
     min-height: 50px; font-variant-numeric: tabular-nums;
 }
