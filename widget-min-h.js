@@ -133,7 +133,7 @@
           border-radius: 15px;
           padding: 10px 15px;
           font-family: 'Roboto Mono', monospace;
-          font-size: 28px;
+          font-size: 14px;
           font-weight: bold;
           text-align: center;
           display: flex;
