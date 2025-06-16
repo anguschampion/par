@@ -181,15 +181,21 @@
           }
           
           #${containerElementId} .par-counter-value-cell {
-            background: none;
-            border: none;
-            padding: 0;
-            justify-content: flex-end;
-            text-align: right;
-            min-height: unset;
-            width: auto;
-            overflow: visible;
-            font-size: 14px;
+
+        background: none;
+        border: none;
+        padding: 5px;
+        text-align: right;
+        min-height: unset;
+        min-width: unset;
+        width: auto;
+        font-size: 14px;
+        justify-content: flex-end;
+        grid-area: auto;
+        overflow: visible;
+
+
+
           }
         }
       `;
