@@ -123,6 +123,7 @@
           justify-content: center;
           align-items: center;
           min-height: 20px;
+          min-width: 180px;
         }
   
         #${containerElementId} .par-counter-value-cell {
@@ -131,15 +132,19 @@
           border: 1px solid #eee;
           border-radius: 15px;
           padding: 10px 15px;
-          font-family: 'Poppins', sans-serif;
-          font-size: 14px;
+          font-family: 'Roboto Mono', monospace;
+          font-size: 28px;
           font-weight: bold;
           text-align: center;
           display: flex;
           justify-content: center;
           align-items: center;
           min-height: 20px;
+          min-width: 180px;
+          width: 180px;
           font-variant-numeric: tabular-nums;
+          white-space: nowrap;
+          overflow: hidden;
         }
   
         /* --- Mobile Styles --- */

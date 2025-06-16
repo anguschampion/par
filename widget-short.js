@@ -233,9 +233,11 @@
         text-align: right;
         min-height: unset;
         min-width: unset;
+        width: auto;
         font-size: 14px;
         justify-content: flex-end;
         grid-area: auto;
+        overflow: visible;
     }
 }
         `;
