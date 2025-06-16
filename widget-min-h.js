@@ -206,14 +206,14 @@
         <div class="par-counter-grid-container">
           <div class="par-counter-item">
             <div class="par-counter-header-item">
-              <div class="par-counter-label">COST TO UK ECONOMY</div>
+              <div class="par-counter-label">UK ECONOMY COST</div>
             </div>
             <div class="par-counter-value-cell" data-counter-type="economy">£0</div>
           </div>
   
           <div class="par-counter-item">
             <div class="par-counter-header-item">
-              <div class="par-counter-label">COST TO THE NHS</div>
+              <div class="par-counter-label">NHS COST</div>
             </div>
             <div class="par-counter-value-cell" data-counter-type="nhs">£0</div>
           </div>
