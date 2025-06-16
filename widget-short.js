@@ -104,10 +104,22 @@
 }
 
 #${containerElementId} .par-counter-value-cell {
-    background-color: #fff; color: #ED5A5C; border: 1px solid #eee; border-radius: 15px;
-    padding: 10px 15px; font-family: 'Poppins', sans-serif; font-size: 28px; font-weight: bold;
-    text-align: center; display: flex; justify-content: center; align-items: center;
-    min-height: 50px; font-variant-numeric: tabular-nums;
+    background-color: #fff;
+    color: #ED5A5C;
+    border: 1px solid #eee;
+    border-radius: 15px;
+    padding: 10px 15px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 20px;
+    min-width: 180px;
+    font-variant-numeric: tabular-nums;
+    width: 180px;
 }
 
 /* Grid Placement for Desktop */
