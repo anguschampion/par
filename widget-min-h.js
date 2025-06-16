@@ -160,20 +160,20 @@
         }
 
         #${containerElementId} .par-counter-item {
-          display: grid;
-          grid-template-columns: auto 1fr;
+          display: flex;
+          flex-direction: column;
           align-items: center;
-          gap: 10px;
-          flex-direction: row;
+          gap: 5px;
         }
 
         #${containerElementId} .par-counter-header-item {
           background: none;
           border: none;
           padding: 0;
-          justify-content: flex-start;
-          text-align: left;
+          justify-content: center;
+          text-align: center;
           min-height: unset;
+          min-width: unset;
         }
 
         #${containerElementId} .par-counter-header-item .par-counter-label {
@@ -184,8 +184,8 @@
           background: none;
           border: none;
           padding: 0;
-          justify-content: flex-end;
-          text-align: right;
+          justify-content: center;
+          text-align: center;
           min-height: unset;
           width: auto;
           overflow: visible;
