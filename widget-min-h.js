@@ -160,11 +160,11 @@
           }
   
           #${containerElementId} .par-counter-item {
-            display: grid;
-            grid-template-columns: auto 1fr;
-            align-items: center;
-            gap: 10px;
-            flex-direction: row;
+            display: flex;
+            flex-wrap: wrap; /* Allow items to wrap */
+            justify-content: space-between; /* Space out header and value */
+            align-items: center; /* Vertically align items */
+            gap: 10px; /* Space between header and value when wrapping */
           }
   
           #${containerElementId} .par-counter-header-item {
@@ -174,6 +174,7 @@
             justify-content: flex-start;
             text-align: left;
             min-height: unset;
+            flex-basis: 70%; /* Give header a base width to encourage wrapping */
           }
   
           #${containerElementId} .par-counter-header-item .par-counter-label {
@@ -181,21 +182,19 @@
           }
           
           #${containerElementId} .par-counter-value-cell {
-
-        background: none;
-        border: none;
-        padding: 5px;
-        text-align: right;
-        min-height: unset;
-        min-width: unset;
-        width: auto;
-        font-size: 14px;
-        justify-content: flex-end;
-        grid-area: auto;
-        overflow: visible;
-
-
-
+            background: none;
+            border: none;
+            padding: 5px;
+            text-align: right;
+            min-height: unset;
+            min-width: unset;
+            width: auto;
+            font-size: 14px;
+            justify-content: flex-end;
+            grid-area: auto;
+            overflow: visible;
+            flex-basis: auto; /* Allow value to take remaining space */
+            flex-grow: 1;
           }
         }
       `;
