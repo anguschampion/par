@@ -109,7 +109,7 @@
     border: 1px solid #eee;
     border-radius: 15px;
     padding: 10px 15px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto Mono', monospace;
     font-size: 14px;
     font-weight: bold;
     text-align: center;
@@ -118,8 +118,10 @@
     align-items: center;
     min-height: 20px;
     min-width: 180px;
-    font-variant-numeric: tabular-nums;
     width: 180px;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 /* Grid Placement for Desktop */
