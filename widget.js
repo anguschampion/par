@@ -72,6 +72,7 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto 1fr 1fr 1fr;
     gap: 10px 15px;
+    width: 100%;
 }
 
 #${containerElementId} .par-counter-metric-group,
