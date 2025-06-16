@@ -192,7 +192,7 @@
 
     #${containerElementId} .par-counter-sub-item {
         display: grid;
-        grid-template-columns: 1fr auto;
+        grid-template-columns: auto 1fr;
         align-items: start;
         margin-bottom: 5px;
         gap: 5px;
