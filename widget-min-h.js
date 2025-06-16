@@ -161,35 +161,35 @@
   
           #${containerElementId} .par-counter-item {
             display: grid;
-            /* Two columns: label on left, value on right */
-            grid-template-columns: 1fr auto;
+            grid-template-columns: auto 1fr;
             align-items: center;
-            gap: 10px; /* Space between label and value */
+            gap: 10px;
             flex-direction: row;
           }
   
           #${containerElementId} .par-counter-header-item {
-            /* Make header a plain text label */
             background: none;
             border: none;
             padding: 0;
-            justify-content: flex-start; /* Align label text left */
+            justify-content: flex-start;
             text-align: left;
             min-height: unset;
           }
   
           #${containerElementId} .par-counter-header-item .par-counter-label {
-            color: #0A1E2C; /* Use dark text for the label */
+            color: #0A1E2C;
           }
           
           #${containerElementId} .par-counter-value-cell {
-            /* Make value a plain text counter */
             background: none;
             border: none;
             padding: 0;
-            justify-content: flex-end; /* Align counter to the right */
+            justify-content: flex-end;
             text-align: right;
             min-height: unset;
+            width: auto;
+            overflow: visible;
+            font-size: 14px;
           }
         }
       `;
